@@ -1,0 +1,6 @@
+platform :ios, '5.0'
+#platform :osx
+
+podspec :path => "../CZGPolygonLayer.podspec"
+
+pod 'cocos2d', '~> 2.0.0'
