@@ -3,6 +3,11 @@ CZGPolygonLayer
 
 CZGPolygonLayer is a cocos2d CCNode subclass that lets you draw arbitrary triangle strips.  In effect, it is an abstraction on an OpenGL triangle strip draw, but you get the benefits of being able to use it as a CCNode.
 
+Installation:
+
+1.  Set up [cocoapods](http://cocoapods.org/) for your project. 
+2.  Add CZGPolygonLayer as a pod
+
 For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
 
 	// Points in the polygon are drawn as GL_TRIANGLE_STRIP.
