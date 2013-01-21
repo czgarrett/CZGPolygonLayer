@@ -19,7 +19,7 @@
 
 @implementation CZGPolygonLayer
 
-@synthesize numberOfPoints = _numberOfPoints;
+@synthesize numberOfPoints = _numberOfPoints, drawMode = _drawMode;
 
 + (CZGPolygonLayer *) nodeWithPoints:(int)numPoints {
    return [[CZGPolygonLayer alloc] initWithPoints: numPoints];
@@ -32,6 +32,8 @@
       _numberOfPoints = numPoints;
       _points = calloc(numPoints, sizeof(ccVertex2F));
       _fillColors = calloc(numPoints, sizeof(ccColor4F));
+        _drawMode = GL_TRIANGLE_STRIP;
+        
       
       for (int i=0; i< numPoints; i++) {
           _fillColors[i] = ccc4f(0.0, 1.0, 0.0, 1.0);
@@ -76,7 +78,7 @@
    
 	ccGLBlendFunc( _blendFunc.src, _blendFunc.dst );
    
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, _numberOfPoints);
+	glDrawArrays(_drawMode, 0, _numberOfPoints);
    
    /*
    glLineWidth(2.0);

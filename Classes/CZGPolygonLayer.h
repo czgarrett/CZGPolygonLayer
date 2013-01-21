@@ -24,6 +24,9 @@
 // Store the number of points in the polygon
 @property (readonly) int numberOfPoints;
 
+// GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, or GL_TRIANGLES.  Default is GL_TRIANGLE_STRIP
+@property (nonatomic, assign) GLenum drawMode;
+
 + (CZGPolygonLayer *) nodeWithPoints: (int) numPoints;
 - (id) initWithPoints: (int) numPoints;
 
