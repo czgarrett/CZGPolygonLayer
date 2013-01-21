@@ -3,10 +3,6 @@ CZGPolygonLayer
 
 CZGPolygonLayer is a cocos2d CCNode subclass that lets you draw arbitrary collections of triangles.  In effect, it is an abstraction on an OpenGL triangle draw, but you get the benefits of being able to use it as a CCNode.
 
-Overview
----
-
-
 Installation
 ---
 
@@ -25,6 +21,7 @@ GL_TRIANGLE_STRIP example
 
 For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
 
+```objective-c
 	// Points in the polygon are drawn as GL_TRIANGLE_STRIP.
 	// If you've got a number of points in a polygon, they're drawn in the
 	// following order:
@@ -36,10 +33,9 @@ For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
 	//       v0---v2---v4----v6
 
 	// See the HelloWorldLayer class in CZGPolygonLayerExample project for some sample usage.
-
-
-```objective-c
-
+	
+	
+	
 	// We're going to draw an n-sided radially symmetrical polygon.
 	self.polygon = [CZGPolygonLayer nodeWithPoints: 100];
 	_polygon.position = center;
@@ -47,7 +43,7 @@ For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
 	// We move the points in and out from the center to create an amoeba-like effect
 	[self update: 0];
  	[self addChild: _polygon];
-
+	
 	...
 
 	- (void) update: (ccTime) dt {
