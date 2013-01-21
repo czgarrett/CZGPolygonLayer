@@ -16,6 +16,13 @@ CZGPolygonLayer is wrapped up as a [cocoapod](cocoapods.org).  The easiest way t
 1.  Set up [cocoapods](http://cocoapods.org/) for your project. 
 2.  Add CZGPolygonLayer as a pod
 
+
+Example
+===
+
+GL_TRIANGLE_STRIP example
+---
+
 For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
 
 	// Points in the polygon are drawn as GL_TRIANGLE_STRIP.
@@ -30,12 +37,6 @@ For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
 
 	// See the HelloWorldLayer class in CZGPolygonLayerExample project for some sample usage.
 
-
-Example
-===
-
-GL_TRIANGLE_STRIP example
----
 
 ```objective-c
 
@@ -68,7 +69,20 @@ GL_TRIANGLE_STRIP example
 GL_TRIANGLE_FAN example
 ---
 
+
+
 ```objective-c
+	// For a quick refresher, here's the order that GL_TRIANGLE_STRIP draws vertices:
+
+	// Points in the polygon are drawn as GL_TRIANGLE_STRIP.
+	// If you've got a number of points in a polygon, they're drawn in the
+	// following order:
+	//
+	//       v2----v3----v4
+	//        |\   |    /|
+	//        | \  |  /  |
+	//        |  \ |/    |
+	//       v1---v0-----v5
 	 // Draw an n-pointed star using GL_TRIANGLE_FAN
 	 int points = 5;
 	 float radius = 100;
@@ -94,6 +108,7 @@ GL_TRIANGLE_FAN example
 ```
 
 GL_TRIANGLES example
+---
 
 ```objective-c
 	 // Draw an n-pointed star using GL_TRIANGLES
